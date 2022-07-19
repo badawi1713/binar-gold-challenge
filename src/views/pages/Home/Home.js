@@ -2,9 +2,7 @@ import {
   CarRent,
   Faq,
   Footer,
-  Header,
-  Navbar,
-  OurServices,
+  Header, OurServices,
   SearchCarModal,
   Testimonials,
   WhyUs
@@ -14,7 +12,6 @@ import "./Home.css";
 const Home = () => {
   return (
     <main>
-      <Navbar />
       <Header />
       <SearchCarModal />
       <OurServices />

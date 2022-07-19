@@ -13,18 +13,18 @@ const Footer = () => {
     <footer className="container mx-auto mb-16 lg:mb-24 px-4">
       <div className="flex flex-col lg:flex-row items-baseline gap-4 lg:gap-20">
         <div className="flex flex-col gap-4 max-w-xs">
-          <p>Jalan Suroyo No. 161 Mayangan Kota Probolinggo 672000</p>
-          <p>binarcarrental@gmail.com</p>
-          <p>081-233-334-808</p>
+          <p className="text-sm font-light">Jalan Suroyo No. 161 Mayangan Kota Probolinggo 672000</p>
+          <p className="text-sm font-light">binarcarrental@gmail.com</p>
+          <p className="text-sm font-light">081-233-334-808</p>
         </div>
         <div className="flex flex-col gap-4 max-w-xs">
-          <p>Our Services</p>
-          <p>Why Us</p>
-          <p>Testimonial</p>
-          <p>FAQ</p>
+          <p className="text-sm font-normal">Our Services</p>
+          <p className="text-sm font-normal">Why Us</p>
+          <p className="text-sm font-normal">Testimonial</p>
+          <p className="text-sm font-normal">FAQ</p>
         </div>
         <div className="flex flex-col gap-4 max-w-xs">
-          <p>Connect with Us</p>
+          <p className="text-sm font-light">Connect with Us</p>
           <div className="flex items-center gap-4">
             <div className="bg-blue-900 text-white p-2 rounded-full w-8 h-8">
               <FiFacebook />
@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col gap-4 max-w-xs">
-          <p>Copyright Binar 2022</p>
+          <p className="text-sm font-light">Copyright Binar 2022</p>
           <Logo />
         </div>
       </div>

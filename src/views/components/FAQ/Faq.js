@@ -16,7 +16,7 @@ const Faq = () => {
           {[0, 1, 2, 3].map((item, index) => (
             <div
               key={item}
-              tabindex={index}
+              tabIndex={index}
               className="collapse collapse-arrow border bg-white border-gray-300 rounded-md w-full mb-4"
             >
               <input type="checkbox" className="peer" />
