@@ -38,7 +38,7 @@ const CarList = () => {
         {[0, 1, 2].map((item) => (
           <div
             key={item}
-            className="p-6 flex flex-col w-96 bg-white shadow-sm border rounded-lg mx-auto"
+            className="p-6 flex flex-col md:w-96 bg-white shadow-sm border rounded-lg mx-auto"
           >
             <figure className="px-4 py-8 mb-4">
               <img

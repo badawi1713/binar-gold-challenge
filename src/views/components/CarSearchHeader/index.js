@@ -8,7 +8,7 @@ const CarSearchHeader = () => {
   console.log(pathname);
 
   return (
-    <header className="bg-dark-blue-00 relative flex flex-col xl:block h-64 " />
+    <header className="bg-dark-blue-00 relative flex flex-col md:block h-20 md:h-64 " />
   );
 };
 
