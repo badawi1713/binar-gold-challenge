@@ -40,7 +40,7 @@ const Button = (props) => {
         return "btn-outline";
 
       case "link":
-        return "btn";
+        return "link";
 
       case "button":
         return "btn-ghost";

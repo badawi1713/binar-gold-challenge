@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { FaStar } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 const createStars = (item) => {
   let stars = [];
@@ -10,4 +12,15 @@ const createStars = (item) => {
   return stars;
 };
 
-export { createStars };
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
+export { createStars, ScrollToTop };
+

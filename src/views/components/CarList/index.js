@@ -12,10 +12,10 @@ const CarList = () => {
             width={"100%"}
           />
         </div>
-        <h1 className="text-3xl mb-2 text-gray-700">
+        <h1 className="text-lg md:text-3xl mb-2 text-gray-700 text-center">
           Maaf, sedang terjadi kesalahan!
         </h1>
-        <p className="text-lg text-gray-500">
+        <p className="text-base md:text-lg text-gray-500 text-center">
           Silakan coba kembali.
         </p>
       </div> */}
@@ -27,10 +27,10 @@ const CarList = () => {
             width={"100%"}
           />
         </div>
-        <h1 className="text-3xl mb-2 text-gray-700">
+       <h1 className="text-lg md:text-3xl mb-2 text-gray-700 text-center">
           Maaf, pencarianmu tidak ditemukan atau tidak tersedia!
         </h1>
-        <p className="text-lg text-gray-500">
+        <p className="text-base md:text-lg text-gray-500 text-center">
           Silakan cari dengan kata kunci yang berbeda.
         </p>
       </div> */}

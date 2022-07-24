@@ -1,15 +1,16 @@
 import {
   CarList,
-  CarSearchHeader,
+  // CarSearchHeader,
   CarSearchModal,
   Footer,
-  // Header,
+  Header,
 } from "views/components";
 
 const CarSearch = () => {
   return (
     <main>
-      <CarSearchHeader />
+      <Header />
+      {/* <CarSearchHeader /> */}
       <CarSearchModal />
       <CarList />
       <Footer />

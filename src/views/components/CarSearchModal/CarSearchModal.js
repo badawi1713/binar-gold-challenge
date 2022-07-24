@@ -1,14 +1,11 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import CarSearchModalForm from "./CarSearchModalForm";
 import "./style.css";
 const CarSearchModal = () => {
   const [onFocus, setOnFocus] = useState(false);
 
-  const searchFormRef = useRef(null);
-
   const openFormFocus = () => {
     document.getElementById("search-form-container").style.zIndex = 11;
-    searchFormRef.current.focus();
     setOnFocus(true);
     document.getElementById("search-form").scrollIntoView({
       behavior: "smooth",
@@ -32,7 +29,7 @@ const CarSearchModal = () => {
         className="py-6 px-4 bg-white shadow-md w-full max-w-6xl mx-auto -mt-8 xl:-mt-16 mb-24 relative rounded-lg"
       >
         <h2 className="text-normal font-bold mb-4">Pencarianmu</h2>
-        <CarSearchModalForm searchFormRef={searchFormRef} />
+        <CarSearchModalForm />
       </section>
       <div className={onFocus ? "overlay" : ""} onClick={closeFormFocus} />
     </>

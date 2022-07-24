@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
 const CarRent = () => {
@@ -12,7 +13,11 @@ const CarRent = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <Button color="primary" variant="contained">Mulai Sewa Mobil</Button>
+        <Link to="/cari-mobil">
+          <Button color="primary" variant="contained">
+            Mulai Sewa Mobil
+          </Button>
+        </Link>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import { Button } from "views/components";
 
-const CarSearchModalForm = ({ searchFormRef }) => {
+const CarSearchModalForm = () => {
   return (
     <>
       <form
@@ -13,7 +13,6 @@ const CarSearchModalForm = ({ searchFormRef }) => {
             <span className="text-xs">Nama Mobil</span>
           </label>
           <input
-            ref={searchFormRef}
             type="text"
             placeholder="Ketik nama/tipe mobil"
             className="input input-bordered w-full text-xs rounded-sm"
@@ -84,12 +83,12 @@ const CarSearchModalForm = ({ searchFormRef }) => {
             </option>
           </select>
         </div>
-        <Button variant="outlined" color="secondary" type="button">
+        {/* <Button variant="outlined" color="secondary" type="button">
           Edit
-        </Button>
-        {/* <Button variant="contained" color="primary" type="submit">
-          Cari Mobil
         </Button> */}
+        <Button variant="contained" color="primary" type="submit">
+          Cari Mobil
+        </Button>
       </form>
     </>
   );
