@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
 const Header = () => {
@@ -13,7 +14,11 @@ const Header = () => {
             terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu
             untuk sewa mobil selama 24 jam.
           </p>
-          <Button color="primary" variant="outlined" >Mulai Sewa Mobil</Button>
+          <Link to="/cari-mobil">
+            <Button color="primary" variant="contained">
+              Mulai Sewa Mobil
+            </Button>
+          </Link>
         </div>
       </div>
       <img

@@ -54,7 +54,7 @@ const Button = (props) => {
     <button
       className={`btn ${colorVariants(color)} ${buttonVariants(
         variant
-      )} capitalize p-3 rounded-sm`}
+      )} capitalize p-3 rounded-sm ${props?.className}`}
       {...nativeProps}
     >
       <>{children || "BUTTON"}</>
