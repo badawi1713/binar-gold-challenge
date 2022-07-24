@@ -5,7 +5,7 @@ const createStars = (item) => {
 
   // Outer loop to create parent
   for (let i = 0; i < item; i++) {
-    stars.push(<FaStar className=" text-warning" fontSize={16} />);
+    stars.push(<FaStar key={i} className=" text-warning" fontSize={16} />);
   }
   return stars;
 };

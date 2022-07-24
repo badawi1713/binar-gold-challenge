@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Button from "../Button/Button";
 
 const Header = () => {
+  const url = useLocation();
+
+  const { pathname } = url;
+
   return (
     <header className="bg-dark-blue-00 relative h-auto flex flex-col xl:block">
       <div className="container mx-auto relative xl:pt-32 xl:pb-24 px-4 mb-8">
@@ -14,11 +18,13 @@ const Header = () => {
             terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu
             untuk sewa mobil selama 24 jam.
           </p>
-          <Link to="/cari-mobil">
-            <Button color="primary" variant="contained">
-              Mulai Sewa Mobil
-            </Button>
-          </Link>
+          {pathname === "/" ? (
+            <Link to="/cari-mobil">
+              <Button color="primary" variant="contained">
+                Mulai Sewa Mobil
+              </Button>
+            </Link>
+          ) : null}
         </div>
       </div>
       <img

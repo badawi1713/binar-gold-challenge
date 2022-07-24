@@ -1,5 +1,4 @@
 import { whyUsData } from "helpers/data";
-import React from "react";
 
 const WhyUs = () => {
   return (
@@ -12,15 +11,17 @@ const WhyUs = () => {
       </p>
       <div className="flex gap-8 flex-col lg:flex-row justify-between">
         {whyUsData?.map((item) => (
-          <div key={item.title} className="bg-white p-6 flex flex-col gap-4 border-2 rounded-lg lg:h-48 lg:w-72 items-baseline">
-            <div className={` p-2 ${item.iconBackgroundColor} rounded-full text-white`}>
+          <div
+            key={item.title}
+            className="bg-white p-6 flex flex-col gap-4 border-2 rounded-lg lg:h-48 lg:w-72 items-baseline"
+          >
+            <div
+              className={` p-2 ${item.iconBackgroundColor} rounded-full text-white`}
+            >
               {item.icon}
             </div>
-            <h3 className="font-bold text-base">Mobil Lengkap</h3>
-            <p className="text-sm font-light">
-              Tersedia banyak pilihan mobil, kondisi masih baru, bersih dan
-              terawat
-            </p>
+            <h3 className="font-bold text-base">{item.title}</h3>
+            <p className="text-sm font-light">{item.content}</p>
           </div>
         ))}
       </div>

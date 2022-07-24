@@ -51,7 +51,7 @@ const whyUsData = [
 
 const testimonialsData = [
   {
-    id: 1,
+    id: "1",
     photo: "assets/images/avatar-1.png",
     stars: 5,
     name: "John Dee",
@@ -61,7 +61,7 @@ const testimonialsData = [
       "“Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod”",
   },
   {
-    id: 2,
+    id: "2",
     photo: "assets/images/avatar-1.png",
     stars: 5,
     name: "John Dee",
@@ -71,7 +71,7 @@ const testimonialsData = [
       "“Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod”",
   },
   {
-    id: 3,
+    id: "3",
     photo: "assets/images/avatar-1.png",
     stars: 5,
     name: "John Dee",

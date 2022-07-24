@@ -58,7 +58,7 @@ const Testimonials = () => {
       <div className="w-full">
         <Slider ref={setSliderRef} {...settings}>
           {testimonialsData.map((item) => (
-            <div key={item}>
+            <div key={item.id}>
               <div className="mx-0 sm:mx-4 md:mx-12 2xl:mx-16">
                 <div className="bg-dark-blue-00 p-4 md:px-8 md:py-16 w-full h-full flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-12 rounded-lg">
                   <img
