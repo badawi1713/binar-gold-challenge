@@ -13,9 +13,9 @@ const Footer = () => {
     <footer className="container mx-auto mb-16 lg:mb-24 px-4">
       <div className="flex flex-col lg:flex-row items-baseline gap-4 lg:gap-20">
         <div className="flex flex-col gap-4 max-w-xs">
-          <p className="text-sm font-light">Jalan Suroyo No. 161 Mayangan Kota Probolinggo 672000</p>
-          <p className="text-sm font-light">binarcarrental@gmail.com</p>
-          <p className="text-sm font-light">081-233-334-808</p>
+          <p className="text-sm font-bold">Jalan Suroyo No. 161 Mayangan Kota Probolinggo 672000</p>
+          <p className="text-sm font-bold">binarcarrental@gmail.com</p>
+          <p className="text-sm font-bold">081-233-334-808</p>
         </div>
         <div className="flex flex-col gap-4 max-w-xs">
           <p className="text-sm font-normal">Our Services</p>
@@ -24,27 +24,27 @@ const Footer = () => {
           <p className="text-sm font-normal">FAQ</p>
         </div>
         <div className="flex flex-col gap-4 max-w-xs">
-          <p className="text-sm font-light">Connect with Us</p>
+          <p className="text-sm font-bold">Connect with Us</p>
           <div className="flex items-center gap-4">
-            <div className="bg-blue-900 text-white p-2 rounded-full w-8 h-8">
+            <div className="bg-dark-blue-04 text-white p-2 rounded-full w-8 h-8">
               <FiFacebook />
             </div>
-            <div className="bg-blue-900 text-white p-2 rounded-full w-8 h-8">
+            <div className="bg-dark-blue-04 text-white p-2 rounded-full w-8 h-8">
               <FiInstagram />
             </div>
-            <div className="bg-blue-900 text-white p-2 rounded-full w-8 h-8">
+            <div className="bg-dark-blue-04 text-white p-2 rounded-full w-8 h-8">
               <FiTwitter />
             </div>
-            <div className="bg-blue-900 text-white p-2 rounded-full w-8 h-8">
+            <div className="bg-dark-blue-04 text-white p-2 rounded-full w-8 h-8">
               <FiMail />
             </div>
-            <div className="bg-blue-900 text-white p-2 rounded-full w-8 h-8">
+            <div className="bg-dark-blue-04 text-white p-2 rounded-full w-8 h-8">
               <FiTwitch />
             </div>
           </div>
         </div>
         <div className="flex flex-col gap-4 max-w-xs">
-          <p className="text-sm font-light">Copyright Binar 2022</p>
+          <strong className="text-sm font-bold">Copyright Binar 2022</strong>
           <Logo />
         </div>
       </div>

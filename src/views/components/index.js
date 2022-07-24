@@ -1,3 +1,4 @@
+export { default as Button } from "./Button/Button";
 export { default as CarRent } from "./CarRent/CarRent";
 export { default as Drawer } from "./Drawer/Drawer";
 export { default as Faq } from "./FAQ/Faq";

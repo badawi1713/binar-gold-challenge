@@ -5,6 +5,7 @@ const Routers = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
+      <Route path="/cari-mobil" element={<Home />}></Route>
     </Routes>
   );
 };

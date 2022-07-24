@@ -1,19 +1,19 @@
-import "./Header.css";
+import Button from "../Button/Button";
 
 const Header = () => {
   return (
-    <header className="header__container relative h-auto flex flex-col xl:block">
+    <header className="bg-dark-blue-00 relative h-auto flex flex-col xl:block">
       <div className="container mx-auto relative xl:pt-32 xl:pb-24 px-4 mb-8">
         <div className="flex flex-col items-start gap-4">
-          <h1 className=" text-4xl font-bold header__title max-w-xl">
+          <h1 className=" text-4xl font-bold max-w-xl leading-normal">
             Sewa &amp; Rental Mobil Terbaik di kawasan (Lokasimu)
           </h1>
-          <p className="text-sm font-light max-w-md">
+          <p className="text-sm font-bold leading-5 max-w-md">
             Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas{" "}
             terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu
             untuk sewa mobil selama 24 jam.
           </p>
-          <button className="bg-green-500">Mulai Sewa Mobil</button>
+          <Button color="primary" variant="outlined" >Mulai Sewa Mobil</Button>
         </div>
       </div>
       <img

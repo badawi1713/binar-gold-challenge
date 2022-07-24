@@ -1,0 +1,23 @@
+.btn-primary {
+    background-color: var(--lime-green-04) !important;
+}
+
+.btn-secondary {
+    background-color: var(--dark-blue-04) !important;
+}
+
+.btn-default {
+    background-color: var(--neutral-02) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--lime-green-05) !important;
+}
+
+.btn-secondary:hover {
+    background-color: var(--dark-blue-05) !important;
+}
+
+.btn-default:hover {
+    background-color: var(--neutral-03) !important;
+}

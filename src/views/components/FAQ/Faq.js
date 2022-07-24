@@ -1,3 +1,4 @@
+import { faqData } from "helpers/data";
 import React from "react";
 
 const Faq = () => {
@@ -13,19 +14,19 @@ const Faq = () => {
           </p>
         </div>
         <div className=" max-w-2xl w-full">
-          {[0, 1, 2, 3].map((item, index) => (
+          {faqData.map((item, index) => (
             <div
-              key={item}
+              key={item.id}
               tabIndex={index}
               className="collapse collapse-arrow border bg-white border-gray-300 rounded-md w-full mb-4"
             >
               <input type="checkbox" className="peer" />
-              <div className="collapse-title text-sm font-light flex items-center py-4 px-6">
-                Focus me to see content
+              <div className="collapse-title text-sm font-bold flex items-center py-4 px-6">
+                {item.title}
               </div>
               <div className="collapse-content px-6">
-                <p className="text-sm font-light leading-5 text-gray-500">
-                  Lorem ipsum dolor si amet
+                <p className="text-sm font-normal leading-5 text-gray-500">
+                  {item.content}
                 </p>
               </div>
             </div>

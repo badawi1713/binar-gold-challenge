@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
-import "./Navbar.css";
 import { FiMenu, FiX } from "react-icons/fi";
 import Drawer from "../Drawer/Drawer";
 import { useState } from "react";
@@ -9,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <nav className="w-full navbar__container sticky left-0 top-0 z-20">
+      <nav className="w-full bg-dark-blue-00 sticky left-0 top-0 z-20">
         <section className="container flex items-center justify-between mx-auto px-4 py-6">
           <Logo />
           <div className="hidden md:flex items-center gap-8">
@@ -17,7 +16,6 @@ const Navbar = () => {
             <Link to="#">Why Us</Link>
             <Link to="#">Testimonial</Link>
             <Link to="#">FAQ</Link>
-            <Link to="#">Register</Link>
           </div>
           <button onClick={() => setIsOpen(true)} className="md:hidden w-6 h-6">
             <FiMenu fontSize={24} className="text-black hover:text-gray-600" />
@@ -31,12 +29,11 @@ const Navbar = () => {
               <h2 className="text-sm font-bold">BCR</h2>
               <button
                 onClick={() => setIsOpen(false)}
-                className="md:hidden w-6 h-6"
               >
                 <FiX fontSize={24} className="text-black hover:text-gray-600" />
               </button>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 text-sm">
               <Link onClick={() => setIsOpen(false)} to="/#our-services">
                 Our Services
               </Link>

@@ -1,17 +1,18 @@
 import React from "react";
+import Button from "../Button/Button";
 
 const CarRent = () => {
   return (
     <section className="container mx-auto mb-24 px-4">
-      <div className="bg-blue-900 w-full p-16 rounded-lg flex flex-col items-center">
+      <div className="bg-dark-blue-04 w-full p-16 rounded-lg flex flex-col items-center">
         <h2 className="text-4xl font-bold mb-4 text-center text-white">
-          Testimonials
+          Sewa Mobil di (Lokasimu) Sekarang
         </h2>
         <p className="text-sm font-light mb-12 text-center text-white max-w-md">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <button className="bg-green-600">Mulai Sewa Mobil</button>
+        <Button color="primary">Mulai Sewa Mobil</Button>
       </div>
     </section>
   );
