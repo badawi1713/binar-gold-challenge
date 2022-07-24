@@ -9,7 +9,7 @@ const Faq = () => {
           <h2 className="text-2xl font-bold leading-9 mb-4 max-w-lg text-center lg:text-left">
             Frequently Asked Question
           </h2>
-          <p className="text-sm font-light leading-5 mb-6 lg:mb-4 max-w-md">
+          <p className="text-sm font-bold leading-5 mb-6 lg:mb-4 max-w-md">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </p>
         </div>
@@ -21,7 +21,7 @@ const Faq = () => {
               className="collapse collapse-arrow border bg-white border-gray-300 rounded-md w-full mb-4"
             >
               <input type="checkbox" className="peer" />
-              <div className="collapse-title text-sm font-bold flex items-center py-4 px-6">
+              <div className="collapse-title text-sm font-bold flex items-center py-4 pl-6 pr-10">
                 {item.title}
               </div>
               <div className="collapse-content px-6">

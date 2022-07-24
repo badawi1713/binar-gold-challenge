@@ -7,39 +7,54 @@ const Button = (props) => {
   const colorVariants = (color) => {
     switch (color) {
       case "primary":
-        return "btn-primary text-white";
+        return "btn-primary";
 
       case "secondary":
-        return "btn-secondary text-white";
+        return "btn-secondary";
+      case "accent":
+        return "btn-accent";
+
+      case "success":
+        return "btn-success";
+      case "warning":
+        return "btn-warning";
+
+      case "error":
+        return "btn-error";
+      case "info":
+        return "btn-info";
+
       case "default":
-        return "btn-default text-black";
+        return "";
 
       default:
-        return "btn-default text-black";
+        return "";
     }
   };
 
   const buttonVariants = (variant) => {
     switch (variant) {
-      case "outlined":
-        return "text-white bg-transparent";
-
       case "contained":
-        return "bg-inherit";
+        return "";
+      case "outlined":
+        return "btn-outline";
+
+      case "link":
+        return "btn";
 
       case "button":
-        return "bg-inherit";
+        return "btn-ghost";
 
       default:
-        return "bg-inherit";
+        return "";
     }
   };
 
   return (
     <button
-      className={` ${buttonVariants(
+      className={`btn ${colorVariants(color)} ${buttonVariants(
         variant
-      )} ${colorVariants(color)} p-3 rounded-sm`}
+      )} capitalize p-3 rounded-sm`}
       {...nativeProps}
     >
       <>{children || "BUTTON"}</>

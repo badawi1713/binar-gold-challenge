@@ -12,7 +12,7 @@ const CarRent = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <Button color="primary">Mulai Sewa Mobil</Button>
+        <Button color="primary" variant="contained">Mulai Sewa Mobil</Button>
       </div>
     </section>
   );
