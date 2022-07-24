@@ -1,20 +1,20 @@
+import React from "react";
 import {
-  CarList,
+  CarCardDetails,
   CarSearchHeader,
   CarSearchModal,
   Footer,
-  // Header,
 } from "views/components";
 
-const CarSearch = () => {
+const CarDetails = () => {
   return (
     <main>
       <CarSearchHeader />
       <CarSearchModal />
-      <CarList />
+      <CarCardDetails />
       <Footer />
     </main>
   );
 };
 
-export default CarSearch;
+export default CarDetails;

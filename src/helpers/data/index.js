@@ -35,7 +35,7 @@ const whyUsData = [
   },
   {
     icon: <FiClock className="stroke-2" />,
-    iconBackgroundColor: "bg-dark-blue-03",
+    iconBackgroundColor: "bg-dark-blue-04",
     title: "Layanan 24 Jam",
     content:
       "Siap melayani kebutuhan Anda selama 24 jam nonstop. Kami juga tersedia di akhir minggu",

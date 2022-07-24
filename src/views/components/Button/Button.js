@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import "./Button.css";
 
 const Button = (props) => {
-  const { variant, color, children, size, ...nativeProps } = props;
+  const { variant, color, children, size, fullWidth, ...nativeProps } = props;
 
   const colorVariants = (color) => {
     switch (color) {
@@ -52,9 +52,11 @@ const Button = (props) => {
 
   return (
     <button
-      className={`btn ${colorVariants(color)} ${buttonVariants(
-        variant
-      )} capitalize p-3 rounded-sm ${props?.className}`}
+      className={`btn ${fullWidth ? "w-full" : "w-auto"} ${colorVariants(
+        color
+      )} ${buttonVariants(variant)} capitalize p-3 rounded-sm ${
+        props?.className
+      }`}
       {...nativeProps}
     >
       <>{children || "BUTTON"}</>
@@ -65,9 +67,11 @@ const Button = (props) => {
 Button.defaultProps = {
   variant: "contained",
   color: "default",
+  fullWidth: false,
 };
 
 Button.propTypes = {
+  fullWidth: PropTypes.bool,
   variant: PropTypes.string,
   color: PropTypes.string,
 };
