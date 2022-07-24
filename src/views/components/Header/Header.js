@@ -24,7 +24,9 @@ const Header = () => {
                 Mulai Sewa Mobil
               </Button>
             </Link>
-          ) : null}
+          ) : (
+            <div className="mb-12" />
+          )}
         </div>
       </div>
       <img

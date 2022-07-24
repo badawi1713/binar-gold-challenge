@@ -26,9 +26,9 @@ const CarSearchModal = () => {
         onClick={openFormFocus}
         tabIndex={0}
         id="search-form-container"
-        className="py-6 px-4 bg-white shadow-md w-full max-w-6xl mx-auto -mt-8 xl:-mt-16 mb-24 relative rounded-lg"
+        className="py-6 px-4 bg-white shadow-md w-full max-w-6xl mx-auto -mt-8 xl:-mt-20 mb-24 relative rounded-lg"
       >
-        <h2 className="text-normal font-bold mb-4">Pencarianmu</h2>
+        {/* <h2 className="text-normal font-bold mb-4">Pencarianmu</h2> */}
         <CarSearchModalForm />
       </section>
       <div className={onFocus ? "overlay" : ""} onClick={closeFormFocus} />
