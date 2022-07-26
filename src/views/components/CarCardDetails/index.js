@@ -80,7 +80,7 @@ const CarCardDetails = () => {
       <div className="flex flex-col items-center justify-center mb-24 gap-4">
         <div className=" w-60 md:w-80 -mt-8 rounded-full">
           <img
-            src="assets/images/empty-search.png"
+            src={process.env.PUBLIC_URL + "/assets/images/empty-search.png"}
             alt="empty-search"
             width={"100%"}
           />
@@ -158,7 +158,7 @@ const CarCardDetails = () => {
               src={
                 data?.image
                   ? data?.image
-                  : "assets/images/no-image-found.png"
+                  : process.env.PUBLIC_URL + "/assets/images/no-image-found.png"
               }
               alt="car-details-preview"
               width={"100%"}
