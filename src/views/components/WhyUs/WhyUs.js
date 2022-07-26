@@ -2,7 +2,7 @@ import { whyUsData } from "helpers/data";
 
 const WhyUs = () => {
   return (
-    <section id="our-services" className="mb-24 mx-auto px-4 container">
+    <section id="why-us" className="mb-24 mx-auto px-4 container">
       <h2 data-aos="fade-up" className="text-2xl font-bold mb-4 text-center lg:text-left">
         Why Us?
       </h2>

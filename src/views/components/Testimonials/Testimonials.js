@@ -50,12 +50,12 @@ const Testimonials = () => {
   };
 
   return (
-    <section data-aos="fade-up" id="our-services" className="mb-24 mx-auto">
+    <section id="testimonials" data-aos="fade-up" className="my-24 mx-auto">
       <h2 className="text-2xl font-bold mb-4 text-center">Testimonials</h2>
       <p className="text-sm font-light mb-10 text-center">
         Berbagai review positif dari para pelanggan kami
       </p>
-      <div className="w-full">
+      <div  className="w-full">
         <Slider ref={setSliderRef} {...settings}>
           {testimonialsData.map((item) => (
             <div key={item.id}>

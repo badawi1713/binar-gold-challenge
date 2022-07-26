@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Logo.css";
 const Logo = () => {
   return (
-    <Link to={"/"}>
+    <Link onClick={() => window.scrollTo(0, 0)} to={"/"}>
       <div className="logo" />
     </Link>
   );

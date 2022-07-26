@@ -45,7 +45,7 @@ const CarList = () => {
                 src={
                   item
                     ? "https://firebasestorage.googleapis.com/v0/b/rent-car-507f6.appspot.com/o/1655268790869-Innova.png?alt=media"
-                    : "assets/images/not-found.png"
+                    : "assets/images/no-image-found.png"
                 }
                 alt="Shoes"
                 width={"100%"}
