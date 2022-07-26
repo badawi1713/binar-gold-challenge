@@ -7,7 +7,7 @@ const WhyUs = () => {
         Why Us?
       </h2>
       <p data-aos="fade-up" className="text-sm font-bold mb-10 text-center lg:text-left">
-        Mengapa harus memilih Binar Rental Car?
+        Mengapa harus memilih Binar Car Rental?
       </p>
       <div className="flex gap-8 flex-col lg:flex-row justify-between items-center">
         {whyUsData?.map((item) => (
