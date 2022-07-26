@@ -3,7 +3,7 @@ import { FiCheck } from "react-icons/fi";
 
 const OurServices = () => {
   return (
-    <section id="our-services" data-aos="fade-up" className="px-4 py-24 container mx-auto flex flex-col lg:flex-row justify-center gap-14 lg:gap-24 items-center">
+    <section id="our-services" data-aos="fade-up" className="px-4 mb-24 py-24 container mx-auto flex flex-col lg:flex-row justify-center gap-14 lg:gap-24 items-center">
       <img
         alt="services-banner"
         src="assets/images/service-image.png"

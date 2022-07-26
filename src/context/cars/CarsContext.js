@@ -20,7 +20,7 @@ export const CarsProvider = ({ children }) => {
 
   const getCars = async () => {
     setLoading();
-    
+
     try {
       const response = await ApiGetRequest(`/admin/car`);
       if (response?.error) {
@@ -36,9 +36,47 @@ export const CarsProvider = ({ children }) => {
         dispatch({
           type: SET_CARS,
           payload: {
-            carsData: response?.data,
+            carsData: response?.data || [],
             loading: false,
             isNotFound: response?.data?.items?.length === 0 ? true : false,
+            error: false,
+          },
+        });
+      }
+    } catch (error) {
+      dispatch({
+        type: SET_CARS,
+        payload: {
+          loading: false,
+          isNotFound: false,
+          error: true,
+        },
+      });
+    }
+  };
+
+  const getCarDetails = async (id) => {
+    setLoading();
+
+    try {
+      const response = await ApiGetRequest(`/admin/car/${id}`);
+      if (response?.error) {
+        dispatch({
+          type: SET_CARS,
+          payload: {
+            loading: false,
+            isNotFound: false,
+            error: true,
+          },
+        });
+      } else {
+        const data = (await response?.data) || {};
+        dispatch({
+          type: SET_CARS,
+          payload: {
+            carDetails: data || {},
+            loading: false,
+            isNotFound: Object.keys(data).length === 0,
             error: false,
           },
         });
@@ -59,6 +97,7 @@ export const CarsProvider = ({ children }) => {
     dispatch({
       type: SET_CARS,
       payload: {
+        getCarDetails: {},
         carsData: [],
         loading: false,
         error: false,
@@ -80,6 +119,7 @@ export const CarsProvider = ({ children }) => {
         clearCarsState,
         changeCars,
         getCars,
+        getCarDetails,
       }}
     >
       {children}

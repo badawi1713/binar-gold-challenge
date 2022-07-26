@@ -26,7 +26,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-8">
             <Link
               onClick={() => scrollToPage("our-services")}
-              activeClass="text-dark-blue-04"
+              activeClass="text-dark-blue-04 font-semibold"
               className="cursor-pointer hover:text-dark-blue-04"
               spy={true}
               to="our-services"
@@ -38,7 +38,7 @@ const Navbar = () => {
             </Link>
             <Link
               onClick={() => scrollToPage("why-us")}
-              activeClass="text-dark-blue-04"
+              activeClass="text-dark-blue-04 font-semibold"
               className="cursor-pointer hover:text-dark-blue-04"
               spy={true}
               offset={-140}
@@ -50,7 +50,7 @@ const Navbar = () => {
             </Link>
             <Link
               onClick={() => scrollToPage("testimonials")}
-              activeClass="text-dark-blue-04"
+              activeClass="text-dark-blue-04 font-semibold"
               className="cursor-pointer hover:text-dark-blue-04"
               spy={true}
               offset={-200}
@@ -62,7 +62,7 @@ const Navbar = () => {
             </Link>
             <Link
               onClick={() => scrollToPage("faq")}
-              activeClass="text-dark-blue-04"
+              activeClass="text-dark-blue-04 font-semibold"
               className="cursor-pointer hover:text-dark-blue-04"
               spy={true}
               offset={-140}
@@ -93,7 +93,7 @@ const Navbar = () => {
                   setIsOpen(false);
                   scrollToPage("our-services");
                 }}
-                activeClass="text-dark-blue-04"
+                activeClass="text-dark-blue-04 font-semibold"
                 className="cursor-pointer hover:text-dark-blue-04"
                 spy={true}
                 offset={-140}
@@ -108,7 +108,7 @@ const Navbar = () => {
                   setIsOpen(false);
                   scrollToPage("why-us");
                 }}
-                activeClass="text-dark-blue-04"
+                activeClass="text-dark-blue-04 font-semibold"
                 className="cursor-pointer hover:text-dark-blue-04"
                 spy={true}
                 offset={-140}
@@ -123,7 +123,7 @@ const Navbar = () => {
                   setIsOpen(false);
                   scrollToPage("testimonials");
                 }}
-                activeClass="text-dark-blue-04"
+                activeClass="text-dark-blue-04 font-semibold"
                 className="cursor-pointer hover:text-dark-blue-04"
                 spy={true}
                 offset={-180}
@@ -138,7 +138,7 @@ const Navbar = () => {
                   setIsOpen(false);
                   scrollToPage("faq");
                 }}
-                activeClass="text-dark-blue-04"
+                activeClass="text-dark-blue-04 font-semibold"
                 className="cursor-pointer hover:text-dark-blue-04"
                 spy={true}
                 offset={-140}
