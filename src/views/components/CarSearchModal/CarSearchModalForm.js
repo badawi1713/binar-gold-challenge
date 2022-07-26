@@ -1,9 +1,28 @@
+import CarsContext from "context/cars/CarsContext";
+import { useContext } from "react";
 import { Button } from "views/components";
 
 const CarSearchModalForm = () => {
+  const { carsData, loading } = useContext(CarsContext);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const capitalize = (text) => {
+      return text.replace(/(^\w{1})|(\s+\w{1})/g, (letter) =>
+        letter.toUpperCase()
+      );
+    };
+    const carName = capitalize("innova");
+    console.log(
+      "hello",
+      carsData?.filter((item) => item.name.includes(carName))
+    );
+  };
+
   return (
     <>
       <form
+        onSubmit={handleSubmit}
         id="search-form"
         tabIndex={1}
         className="flex flex-col md:flex-row md:items-end gap-4 justify-between "
@@ -13,6 +32,7 @@ const CarSearchModalForm = () => {
             <span className="text-xs">Nama Mobil</span>
           </label>
           <input
+            disabled={loading}
             type="text"
             placeholder="Ketik nama/tipe mobil"
             className="input input-bordered w-full text-xs rounded-sm"
@@ -23,7 +43,10 @@ const CarSearchModalForm = () => {
           <label className="label">
             <span className="text-xs">Kategori</span>
           </label>
-          <select className="select select-bordered w-full text-xs font-normal text-black rounded-sm">
+          <select
+            disabled={loading}
+            className="select select-bordered w-full text-xs font-normal text-black rounded-sm"
+          >
             <option className="text-gray-400" value="">
               Pilih Kapasitas Mobil
             </option>
@@ -46,7 +69,10 @@ const CarSearchModalForm = () => {
           <label className="label">
             <span className="text-xs">Harga</span>
           </label>
-          <select className="select select-bordered w-full text-xs font-normal text-black rounded-sm">
+          <select
+            disabled={loading}
+            className="select select-bordered w-full text-xs font-normal text-black rounded-sm"
+          >
             <option className="text-gray-400" value="">
               Pilih Harga Sewa Per hari
             </option>
@@ -68,7 +94,7 @@ const CarSearchModalForm = () => {
           <label className="label">
             <span className="text-xs">Status</span>
           </label>
-          <select className="select select-bordered w-full text-xs font-normal text-black rounded-sm">
+          <select  disabled={loading} className="select select-bordered w-full text-xs font-normal text-black rounded-sm">
             <option className="text-gray-400" value="">
               Pilih Status Mobil
             </option>
@@ -83,10 +109,15 @@ const CarSearchModalForm = () => {
             </option>
           </select>
         </div>
-        {/* <Button variant="outlined" color="secondary" type="button">
+        {/* <Button  disabled={loading} variant="outlined" color="secondary" type="button">
           Edit
         </Button> */}
-        <Button variant="contained" color="primary" type="submit">
+        <Button
+          disabled={loading}
+          variant="contained"
+          color="primary"
+          type="submit"
+        >
           Cari Mobil
         </Button>
       </form>

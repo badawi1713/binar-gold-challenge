@@ -4,6 +4,7 @@ import { ScrollToTop } from "helpers/utils";
 import { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import Routers from "routers/Routers";
+import ContextProvider from "./context";
 import { Navbar } from "views/components";
 const App = () => {
   useEffect(() => {
@@ -15,11 +16,13 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Navbar />
-      <Routers />
-    </BrowserRouter>
+    <ContextProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Navbar />
+        <Routers />
+      </BrowserRouter>
+    </ContextProvider>
   );
 };
 

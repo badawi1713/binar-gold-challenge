@@ -2,6 +2,31 @@ import React from "react";
 import { FiUsers } from "react-icons/fi";
 
 const CarCardDetails = () => {
+  const includesData = [
+    "Apa saja yang termasuk dalam paket misal durasi max 12 jam",
+    "Sudah termasuk bensin selama 12 jam",
+    "Sudah termasuk Tiket Wisata",
+    "Sudah termasuk pajak",
+  ];
+
+  const excludesData = [
+    "Tidak termasuk biaya makan sopir Rp 75.000/hari",
+    "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
+    "Tidak termasuk akomodasi penginapan",
+  ];
+
+  const othersData = [
+    "Tidak termasuk biaya makan sopir Rp 75.000/hari",
+    "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
+    "Tidak termasuk akomodasi penginapan",
+    "Tidak termasuk biaya makan sopir Rp 75.000/hari",
+    "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
+    "Tidak termasuk akomodasi penginapan",
+    "Tidak termasuk biaya makan sopir Rp 75.000/hari",
+    "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
+    "Tidak termasuk akomodasi penginapan",
+  ];
+
   return (
     <section className="container mx-auto mb-24 w-full max-w-6xl px-4 lg:p-0">
       <div className="w-full flex flex-col-reverse md:flex-row justify-between gap-8 items-start ">
@@ -10,12 +35,12 @@ const CarCardDetails = () => {
           <div>
             <h2 className="text-sm font-bold mb-2">Include</h2>
             <ul className="list-inside">
-              {[1, 2, 3, 4, 5].map((item) => (
+              {includesData.map((item) => (
                 <li
                   key={item}
                   className="list-disc text-sm leading-6 text-neutral-03 font-bold"
                 >
-                  Apa saja yang termasuk dalam paket misal durasi max 12 jam
+                  {item}
                 </li>
               ))}
             </ul>
@@ -23,12 +48,12 @@ const CarCardDetails = () => {
           <div>
             <h2 className="text-sm font-bold mb-2">Exclude</h2>
             <ul className="list-inside">
-              {[1, 2, 3, 4, 5].map((item) => (
+              {excludesData.map((item) => (
                 <li
                   key={item}
                   className="list-disc text-sm leading-6 text-neutral-03 font-bold"
                 >
-                  Apa saja yang termasuk dalam paket misal durasi max 12 jam
+                  {item}
                 </li>
               ))}
             </ul>
@@ -43,12 +68,12 @@ const CarCardDetails = () => {
             </div>
             <div className="collapse-content p-0 -mt-2">
               <ul className="list-inside">
-                {[1, 2, 3].map((item) => (
+                {othersData.map((item, index) => (
                   <li
-                    key={item}
+                    key={index}
                     className="list-disc text-sm leading-6 text-neutral-03 font-bold"
                   >
-                    Tidak termasuk biaya makan sopir Rp 75.000/hari
+                    {item}
                   </li>
                 ))}
               </ul>
