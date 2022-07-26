@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Link, scroller } from "react-scroll";
+import { Link } from "react-scroll";
 import Drawer from "../Drawer/Drawer";
 import Logo from "../Logo/Logo";
 
@@ -53,7 +53,7 @@ const Navbar = () => {
               activeClass="text-dark-blue-04"
               className="cursor-pointer hover:text-dark-blue-04"
               spy={true}
-              offset={-120}
+              offset={-200}
               to="testimonials"
               smooth={true}
               duration={500}
