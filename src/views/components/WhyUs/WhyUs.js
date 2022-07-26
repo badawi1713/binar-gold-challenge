@@ -9,7 +9,7 @@ const WhyUs = () => {
       <p data-aos="fade-up" className="text-sm font-bold mb-10 text-center lg:text-left">
         Mengapa harus memilih Binar Car Rental?
       </p>
-      <div className="flex gap-8 flex-col lg:flex-row justify-between items-center">
+      <div className="flex gap-8 flex-col lg:flex-row justify-between items-stretch">
         {whyUsData?.map((item) => (
           <div
             data-aos="zoom-in"

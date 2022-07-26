@@ -13,7 +13,7 @@ const Faq = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </p>
         </div>
-        <div data-aos="fade-up" className=" max-w-2xl w-full">
+        <div data-aos="fade-up" className=" lg:max-w-2xl w-full">
           {faqData.map((item, index) => (
             <div
               key={item.id}

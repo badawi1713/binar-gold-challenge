@@ -50,7 +50,7 @@ const CarSearchModalForm = () => {
             <option className="text-gray-400" value="">
               Pilih Kapasitas Mobil
             </option>
-            <option className="text-black" value="semua">
+            <option className="text-black" value="">
               Semua
             </option>
             <option className="text-black" value="2 - 4 orang">
@@ -76,17 +76,17 @@ const CarSearchModalForm = () => {
             <option className="text-gray-400" value="">
               Pilih Harga Sewa Per hari
             </option>
-            <option className="text-gray-400" value="semua">
-              Pilih Harga Sewa Per hari
+            <option className="text-black" value="">
+              Semua
             </option>
             <option className="text-black" value="1">
-              &lt; Rp 400.000{" "}
+              &lt; Rp 400.000
             </option>
             <option className="text-black" value="2">
               Rp 400.000 - Rp 600.000{" "}
             </option>
             <option className="text-black" value="3">
-              &gt; Rp 600.000{" "}
+              &gt; Rp 600.000
             </option>
           </select>
         </div>
@@ -94,7 +94,10 @@ const CarSearchModalForm = () => {
           <label className="label">
             <span className="text-xs">Status</span>
           </label>
-          <select  disabled={loading} className="select select-bordered w-full text-xs font-normal text-black rounded-sm">
+          <select
+            disabled={loading}
+            className="select select-bordered w-full text-xs font-normal text-black rounded-sm"
+          >
             <option className="text-gray-400" value="">
               Pilih Status Mobil
             </option>

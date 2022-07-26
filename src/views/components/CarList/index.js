@@ -8,6 +8,7 @@ const CarList = () => {
 
   const isEmpty = carsData.length < 1;
 
+
   if (loading) {
     return (
       <section className="container mx-auto mb-24 px-4">
@@ -15,7 +16,7 @@ const CarList = () => {
           {[0, 1, 2].map((item) => (
             <div
               key={item}
-              className="p-6 flex flex-col md:w-96 bg-white shadow-sm border rounded-lg mx-auto animate-pulse"
+              className="p-6 flex flex-col w-full md:w-96 bg-white shadow-sm border rounded-lg mx-auto animate-pulse"
             >
               <div className="px-4 py-8 mb-4">
                 <div className=" h-32 w-full bg-slate-400"></div>
@@ -73,7 +74,7 @@ const CarList = () => {
         {carsData.map((item) => (
           <div
             key={item.id}
-            className="p-6 flex flex-col md:w-96 bg-white shadow-sm border rounded-lg mx-auto"
+            className="p-6 flex flex-col w-full md:w-96 bg-white shadow-sm border rounded-lg mx-auto"
           >
             <figure className="px-4 py-8 mb-4">
               <img

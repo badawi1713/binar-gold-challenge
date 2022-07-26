@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 const CarRent = () => {
   return (
     <section data-aos="zoom-in" className="container mx-auto mb-24 px-4">
-      <div className="bg-dark-blue-04 w-full p-16 rounded-lg flex flex-col items-center">
+      <div className="bg-dark-blue-04 w-full p-8 md:p-16 rounded-lg flex flex-col items-center">
         <h2 className="text-4xl font-bold mb-4 text-center text-white">
           Sewa Mobil di (Lokasimu) Sekarang
         </h2>
