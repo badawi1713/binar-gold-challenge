@@ -50,7 +50,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="our-services" className="mb-24 mx-auto">
+    <section data-aos="fade-up" id="our-services" className="mb-24 mx-auto">
       <h2 className="text-2xl font-bold mb-4 text-center">Testimonials</h2>
       <p className="text-sm font-light mb-10 text-center">
         Berbagai review positif dari para pelanggan kami

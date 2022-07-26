@@ -5,7 +5,7 @@ const Faq = () => {
   return (
     <section className="container px-4 mb-16 lg:mb-36 mx-auto">
       <div className="flex flex-col lg:flex-row lg:justify-between">
-        <div className="max-w-md lg:mr-32">
+        <div data-aos="fade-right" className="max-w-md lg:mr-32">
           <h2 className="text-2xl font-bold leading-9 mb-4 max-w-lg text-center lg:text-left">
             Frequently Asked Question
           </h2>
@@ -13,7 +13,7 @@ const Faq = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </p>
         </div>
-        <div className=" max-w-2xl w-full">
+        <div data-aos="fade-up" className=" max-w-2xl w-full">
           {faqData.map((item, index) => (
             <div
               key={item.id}

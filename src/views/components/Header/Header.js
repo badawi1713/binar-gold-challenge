@@ -8,7 +8,10 @@ const Header = () => {
 
   return (
     <header className="bg-dark-blue-00 relative h-auto flex flex-col xl:block">
-      <div className="container mx-auto relative xl:pt-32 xl:pb-24 px-4 mb-8">
+      <div
+        data-aos-anchor="#header"
+        data-aos="fade-right"
+        className="container mx-auto relative xl:pt-32 xl:pb-24 px-4 mb-8">
         <div className="flex flex-col items-start gap-4">
           <h1 className=" text-4xl font-bold max-w-xl leading-normal">
             Sewa &amp; Rental Mobil Terbaik di kawasan (Lokasimu)
@@ -30,6 +33,8 @@ const Header = () => {
         </div>
       </div>
       <img
+        data-aos-anchor="#parent"
+        data-aos="fade-up"
         alt="header-car"
         width={"100%"}
         src="assets/images/header-image.png"
