@@ -1,22 +1,31 @@
 import CarsContext from "context/cars/CarsContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Button } from "views/components";
 
 const CarSearchModalForm = () => {
-  const { carsData, loading } = useContext(CarsContext);
+  const { loading, editMode } = useContext(CarsContext);
+
+  const initialFormData = {
+    name: "",
+    category: "",
+    price: "",
+    status: "",
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+
+  const handleChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target?.id]: e.target?.value,
+    }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const capitalize = (text) => {
-      return text.replace(/(^\w{1})|(\s+\w{1})/g, (letter) =>
-        letter.toUpperCase()
-      );
-    };
-    const carName = capitalize("innova");
-    console.log(
-      "hello",
-      carsData?.filter((item) => item.name.includes(carName))
-    );
+    console.log(formData);
+    // const data = {name: "innova"};
+    // getCars(data);
   };
 
   return (
@@ -25,17 +34,20 @@ const CarSearchModalForm = () => {
         onSubmit={handleSubmit}
         id="search-form"
         tabIndex={1}
-        className="flex flex-col md:flex-row md:items-end gap-4 justify-between "
+        className="flex flex-col md:flex-row md:items-end gap-4 justify-between"
       >
         <div className="form-control flex-1">
           <label className="label">
             <span className="text-xs">Nama Mobil</span>
           </label>
           <input
-            disabled={loading}
+            onChange={handleChange}
+            disabled={loading || !editMode}
             type="text"
+            id="name"
+            name="name"
             placeholder="Ketik nama/tipe mobil"
-            className="input input-bordered w-full text-xs rounded-sm"
+            className="input input-bordered w-full text-xs rounded-sm without-ring"
           />
         </div>
 
@@ -44,10 +56,13 @@ const CarSearchModalForm = () => {
             <span className="text-xs">Kategori</span>
           </label>
           <select
-            disabled={loading}
-            className="select select-bordered w-full text-xs font-normal text-black rounded-sm"
+            onChange={handleChange}
+            id="category"
+            name="category"
+            disabled={loading || !editMode}
+            className="select select-bordered w-full text-xs font-normal text-black rounded-sm appearance-none without-ring "
           >
-            <option className="text-gray-400" value="">
+            <option className="text-gray-400" disabled>
               Pilih Kapasitas Mobil
             </option>
             <option className="text-black" value="">
@@ -56,7 +71,7 @@ const CarSearchModalForm = () => {
             <option className="text-black" value="2 - 4 orang">
               2 - 4 orang
             </option>
-            <option className="text-black" value="4 - 6 orang2">
+            <option className="text-black" value="4 - 6 orang">
               4 - 6 orang
             </option>
             <option className="text-black" value="6 - 8 orang">
@@ -70,10 +85,13 @@ const CarSearchModalForm = () => {
             <span className="text-xs">Harga</span>
           </label>
           <select
-            disabled={loading}
-            className="select select-bordered w-full text-xs font-normal text-black rounded-sm"
+            onChange={handleChange}
+            id="price"
+            name="price"
+            disabled={loading || !editMode}
+            className="select select-bordered w-full text-xs font-normal text-black rounded-sm without-ring"
           >
-            <option className="text-gray-400" value="">
+            <option className="text-gray-400" disabled>
               Pilih Harga Sewa Per hari
             </option>
             <option className="text-black" value="">
@@ -95,10 +113,13 @@ const CarSearchModalForm = () => {
             <span className="text-xs">Status</span>
           </label>
           <select
-            disabled={loading}
-            className="select select-bordered w-full text-xs font-normal text-black rounded-sm"
+            onChange={handleChange}
+            id="status"
+            name="status"
+            disabled={loading || !editMode}
+            className="select select-bordered w-full text-xs font-normal text-black rounded-sm without-ring"
           >
-            <option className="text-gray-400" value="">
+            <option className="text-gray-400" disabled>
               Pilih Status Mobil
             </option>
             <option className="text-black" value={""}>
@@ -112,16 +133,13 @@ const CarSearchModalForm = () => {
             </option>
           </select>
         </div>
-        {/* <Button  disabled={loading} variant="outlined" color="secondary" type="button">
-          Edit
-        </Button> */}
         <Button
           disabled={loading}
-          variant="contained"
-          color="primary"
+          variant={editMode ? "contained" : "outlined"}
+          color={editMode ? "primary" : "secondary"}
           type="submit"
         >
-          Cari Mobil
+          {editMode ? "Cari Mobil" : "Edit"}
         </Button>
       </form>
     </>

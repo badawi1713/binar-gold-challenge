@@ -2,24 +2,24 @@ import CarsContext from "context/cars/CarsContext";
 import { useContext, useEffect } from "react";
 import {
   CarList,
-  // CarSearchHeader,
+  CarSearchHeader,
   CarSearchModal,
   Footer,
-  Header,
+  Header
 } from "views/components";
 
 const CarSearch = () => {
-  const { getCars } = useContext(CarsContext);
+  const { getCarList, showResults } = useContext(CarsContext);
 
   useEffect(() => {
-    getCars();
+    getCarList();
     // eslint-disable-next-line
   }, []);
 
   return (
     <main>
-      <Header />
-      {/* <CarSearchHeader /> */}
+      {showResults ? <CarSearchHeader /> : <Header />}
+
       <CarSearchModal />
       <CarList />
       <Footer />

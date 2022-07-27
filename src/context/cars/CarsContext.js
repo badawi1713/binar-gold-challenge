@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import { ApiGetRequest } from "services/Api";
+import { ApiGetRequest, ApiPostRequest } from "services/Api";
 import { SET_CARS } from "../constants";
 import carsReducer from "./CarsReducer";
 import { carsState } from "./CarsState";
@@ -18,7 +18,7 @@ export const CarsProvider = ({ children }) => {
     });
   };
 
-  const getCars = async () => {
+  const getCarList = async (data) => {
     setLoading();
 
     try {
@@ -40,6 +40,7 @@ export const CarsProvider = ({ children }) => {
             loading: false,
             isNotFound: response?.data?.items?.length === 0 ? true : false,
             error: false,
+            showResults: true,
           },
         });
       }
@@ -47,6 +48,46 @@ export const CarsProvider = ({ children }) => {
       dispatch({
         type: SET_CARS,
         payload: {
+          loading: false,
+          isNotFound: false,
+          error: true,
+          showResults: false,
+        },
+      });
+    }
+  };
+
+  const getCars = async (data) => {
+    setLoading();
+
+    try {
+      const response = await ApiPostRequest(`/admin/car`, data);
+      if (response?.error) {
+        dispatch({
+          type: SET_CARS,
+          payload: {
+            loading: false,
+            isNotFound: false,
+            error: true,
+          },
+        });
+      } else {
+        dispatch({
+          type: SET_CARS,
+          payload: {
+            showResults: true,
+            carsData: response?.data || [],
+            loading: false,
+            isNotFound: response?.data?.items?.length === 0 ? true : false,
+            error: false,
+          },
+        });
+      }
+    } catch (error) {
+      dispatch({
+        type: SET_CARS,
+        payload: {
+          showResults: false,
           loading: false,
           isNotFound: false,
           error: true,
@@ -96,12 +137,7 @@ export const CarsProvider = ({ children }) => {
   const clearCarsState = () => {
     dispatch({
       type: SET_CARS,
-      payload: {
-        getCarDetails: {},
-        carsData: [],
-        loading: false,
-        error: false,
-      },
+      payload: carsState,
     });
   };
 
@@ -120,6 +156,7 @@ export const CarsProvider = ({ children }) => {
         changeCars,
         getCars,
         getCarDetails,
+        getCarList,
       }}
     >
       {children}

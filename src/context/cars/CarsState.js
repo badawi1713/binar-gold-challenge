@@ -6,6 +6,8 @@ export const carsState = {
     category: "",
     price: "",
   },
+  showResults: false,
+  editMode: true,
   loading: false,
   error: false,
   isNotFound: false,
