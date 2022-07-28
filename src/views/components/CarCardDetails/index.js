@@ -174,9 +174,12 @@ const CarCardDetails = () => {
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-bold">Total</h2>
             <p className="text-sm font-bold">
-              <CurrencyFormat value={data?.price ? `${data?.price}` : '0'} />
+              <CurrencyFormat value={data?.price ? `${data?.price}` : "0"} />
             </p>
           </div>
+          {/* <Link to="/cari-mobil">
+            <Button fullWidth color="primary">Kembali ke Pencarian Mobil</Button>
+          </Link> */}
         </div>
       </div>
     </section>

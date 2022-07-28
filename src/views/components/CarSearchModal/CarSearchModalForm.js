@@ -2,8 +2,9 @@ import CarsContext from "context/cars/CarsContext";
 import { useContext, useState } from "react";
 import { Button } from "views/components";
 
-const CarSearchModalForm = () => {
-  const { loading, editMode } = useContext(CarsContext);
+const CarSearchModalForm = ({ closeFormFocus }) => {
+  const { loading, editMode, changeCars, carsData, getCarList } =
+    useContext(CarsContext);
 
   const initialFormData = {
     name: "",
@@ -21,11 +22,28 @@ const CarSearchModalForm = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    // const data = {name: "innova"};
-    // getCars(data);
+    const { name } = formData;
+
+    changeCars({
+      loading: true,
+    });
+
+    closeFormFocus();
+
+    if (name.trim() === "") {
+      return getCarList();
+    }
+
+    let newData = carsData?.filter((item) => item.name === name);
+
+    setTimeout(() => {
+      changeCars({
+        loading: false,
+        carsData: newData,
+      });
+    }, 2000);
   };
 
   return (
@@ -59,7 +77,7 @@ const CarSearchModalForm = () => {
             onChange={handleChange}
             id="category"
             name="category"
-            disabled={loading || !editMode}
+            disabled
             className="select select-bordered w-full text-xs font-normal text-black rounded-sm appearance-none without-ring "
           >
             <option className="text-gray-400" disabled>
@@ -88,7 +106,7 @@ const CarSearchModalForm = () => {
             onChange={handleChange}
             id="price"
             name="price"
-            disabled={loading || !editMode}
+            disabled
             className="select select-bordered w-full text-xs font-normal text-black rounded-sm without-ring"
           >
             <option className="text-gray-400" disabled>
@@ -121,9 +139,6 @@ const CarSearchModalForm = () => {
           >
             <option className="text-gray-400" disabled>
               Pilih Status Mobil
-            </option>
-            <option className="text-black" value={""}>
-              Semua
             </option>
             <option className="text-black" value={true}>
               Tersedia

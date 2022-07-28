@@ -2,14 +2,14 @@ import CarsContext from "context/cars/CarsContext";
 import { useContext, useEffect } from "react";
 import {
   CarList,
-  CarSearchHeader,
+  // CarSearchHeader,
   CarSearchModal,
   Footer,
   Header
 } from "views/components";
 
 const CarSearch = () => {
-  const { getCarList, showResults } = useContext(CarsContext);
+  const { getCarList } = useContext(CarsContext);
 
   useEffect(() => {
     getCarList();
@@ -18,8 +18,8 @@ const CarSearch = () => {
 
   return (
     <main>
-      {showResults ? <CarSearchHeader /> : <Header />}
-
+      {/* {showResults ? <CarSearchHeader /> : <Header />} */}
+      <Header />
       <CarSearchModal />
       <CarList />
       <Footer />

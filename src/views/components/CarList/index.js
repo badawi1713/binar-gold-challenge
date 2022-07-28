@@ -7,7 +7,7 @@ import CurrencyFormat from "../CurrencyFormat";
 const CarList = () => {
   const { loading, carsData, error } = useContext(CarsContext);
 
-  const isEmpty = carsData.length < 1;
+  const isEmpty = carsData.length === 0;
 
   if (loading) {
     return (
@@ -37,35 +37,39 @@ const CarList = () => {
   }
 
   if (isEmpty) {
-    <div className="flex flex-col items-center justify-center">
-      <div className=" w-60 md:w-80 -mt-8 rounded-full">
-        <img
-          src="assets/images/empty-search.png"
-          alt="empty-search"
-          width={"100%"}
-        />
+    return (
+      <div className="flex flex-col items-center justify-center mb-24 px-4">
+        <div className=" w-60 md:w-80 -mt-8 rounded-full">
+          <img
+            src="assets/images/empty-search.png"
+            alt="empty-search"
+            width={"100%"}
+          />
+        </div>
+        <h1 className="text-lg md:text-3xl mb-2 text-gray-700 text-center">
+          Maaf, daftar mobil tidak ditemukan atau tidak tersedia!
+        </h1>
+        <p className="text-base md:text-lg text-gray-500 text-center">
+          Silakan cari dengan kata kunci yang berbeda.
+        </p>
       </div>
-      <h1 className="text-lg md:text-3xl mb-2 text-gray-700 text-center">
-        Maaf, daftar mobil tidak ditemukan atau tidak tersedia!
-      </h1>
-      <p className="text-base md:text-lg text-gray-500 text-center">
-        Silakan cari dengan kata kunci yang berbeda.
-      </p>
-    </div>;
+    );
   }
 
   if (error) {
-    <div className="flex flex-col items-center justify-center">
-      <div className=" w-60 md:w-80 -mt-8 rounded-full">
-        <img src="assets/images/error.png" alt="error" width={"100%"} />
+    return (
+      <div className="flex flex-col items-center justify-center mb-24 px-4">
+        <div className=" w-60 md:w-80 -mt-8 rounded-full">
+          <img src="assets/images/error.png" alt="error" width={"100%"} />
+        </div>
+        <h1 className="text-lg md:text-3xl mb-2 text-gray-700 text-center">
+          Maaf, sedang terjadi kesalahan!
+        </h1>
+        <p className="text-base md:text-lg text-gray-500 text-center">
+          Silakan coba kembali.
+        </p>
       </div>
-      <h1 className="text-lg md:text-3xl mb-2 text-gray-700 text-center">
-        Maaf, sedang terjadi kesalahan!
-      </h1>
-      <p className="text-base md:text-lg text-gray-500 text-center">
-        Silakan coba kembali.
-      </p>
-    </div>;
+    );
   }
 
   return (

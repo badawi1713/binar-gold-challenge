@@ -29,7 +29,7 @@ const CarSearchModal = () => {
         className="py-6 px-4 bg-white shadow-md w-full max-w-6xl mx-auto -mt-8 xl:-mt-20 mb-24 relative rounded-lg"
       >
         {/* <h2 className="text-normal font-bold mb-4">Pencarianmu</h2> */}
-        <CarSearchModalForm />
+        <CarSearchModalForm closeFormFocus={closeFormFocus} />
       </section>
       <div className={onFocus ? "overlay" : ""} onClick={closeFormFocus} />
     </>

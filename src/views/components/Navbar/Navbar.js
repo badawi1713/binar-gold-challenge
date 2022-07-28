@@ -20,7 +20,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full bg-dark-blue-00 sticky left-0 top-0 z-10">
+      {/* sticky left-0 top-0 z-10 */}
+      <nav className="w-full bg-dark-blue-00">
         <section className="container flex items-center justify-between mx-auto px-4 py-6">
           <Logo />
           <div className="hidden md:flex items-center gap-8">
@@ -41,7 +42,7 @@ const Navbar = () => {
               activeClass="text-dark-blue-04 font-semibold"
               className="cursor-pointer hover:text-dark-blue-04"
               spy={true}
-              offset={-140}
+              offset={-80}
               to="why-us"
               smooth={true}
               duration={500}
@@ -65,7 +66,7 @@ const Navbar = () => {
               activeClass="text-dark-blue-04 font-semibold"
               className="cursor-pointer hover:text-dark-blue-04"
               spy={true}
-              offset={-140}
+              offset={-80}
               to="faq"
               smooth={true}
               duration={500}
@@ -96,7 +97,7 @@ const Navbar = () => {
                 activeClass="text-dark-blue-04 font-semibold"
                 className="cursor-pointer hover:text-dark-blue-04"
                 spy={true}
-                offset={-140}
+                offset={-80}
                 to="our-services"
                 smooth={true}
                 duration={500}
@@ -111,7 +112,7 @@ const Navbar = () => {
                 activeClass="text-dark-blue-04 font-semibold"
                 className="cursor-pointer hover:text-dark-blue-04"
                 spy={true}
-                offset={-140}
+                offset={-80}
                 to="why-us"
                 smooth={true}
                 duration={500}
@@ -141,7 +142,7 @@ const Navbar = () => {
                 activeClass="text-dark-blue-04 font-semibold"
                 className="cursor-pointer hover:text-dark-blue-04"
                 spy={true}
-                offset={-140}
+                offset={-80}
                 to="faq"
                 smooth={true}
                 duration={500}
