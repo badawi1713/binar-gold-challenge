@@ -1,9 +1,9 @@
 import CarsContext from "context/cars/CarsContext";
+import { currencyFormat } from "helpers/utils";
 import { useContext } from "react";
 import { FiUsers } from "react-icons/fi";
 import { Link, useParams } from "react-router-dom";
 import Button from "../Button/Button";
-import CurrencyFormat from "../CurrencyFormat";
 
 const includesData = [
   "Apa saja yang termasuk dalam paket misal durasi max 12 jam",
@@ -174,7 +174,7 @@ const CarCardDetails = () => {
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-bold">Total</h2>
             <p className="text-sm font-bold">
-              <CurrencyFormat value={data?.price ? `${data?.price}` : "0"} />
+              {currencyFormat(data?.price || 0)}
             </p>
           </div>
           {/* <Link to="/cari-mobil">

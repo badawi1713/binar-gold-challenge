@@ -1,8 +1,8 @@
 import CarsContext from "context/cars/CarsContext";
+import { currencyFormat } from "helpers/utils";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
-import CurrencyFormat from "../CurrencyFormat";
 
 const CarList = () => {
   const { loading, carsData, error } = useContext(CarsContext);
@@ -92,7 +92,7 @@ const CarList = () => {
             <div className="flex flex-col">
               <h2 className="leading-5 font-normal text-sm">{item.name}</h2>
               <p className="text-base leading-6 font-bold my-2">
-                <CurrencyFormat value={item?.price ? `${item?.price}` : "0"} />
+                {currencyFormat(item?.price || 0)}
               </p>
               <p className="text-sm font-bold leading-5">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

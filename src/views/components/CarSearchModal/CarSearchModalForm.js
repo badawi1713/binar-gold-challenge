@@ -1,10 +1,15 @@
 import CarsContext from "context/cars/CarsContext";
 import { useContext, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Button } from "views/components";
 
 const CarSearchModalForm = ({ closeFormFocus }) => {
   const { loading, editMode, changeCars, carsData, getCarList } =
     useContext(CarsContext);
+
+  const { pathname } = useLocation();
+
+  const isNotSearchPage = pathname !== "/cari-mobil" ? true : false;
 
   const initialFormData = {
     name: "",
@@ -24,7 +29,7 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name } = formData;
+    const { name, category } = formData;
 
     changeCars({
       loading: true,
@@ -32,11 +37,14 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
 
     closeFormFocus();
 
-    if (name.trim() === "") {
+    if (name.trim() === "" && !category) {
       return getCarList();
     }
 
     let newData = carsData?.filter((item) => item.name === name);
+    newData = category
+      ? carsData?.filter((item) => item.category === category)
+      : newData;
 
     setTimeout(() => {
       changeCars({
@@ -59,8 +67,13 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             <span className="text-xs">Nama Mobil</span>
           </label>
           <input
-            onChange={handleChange}
-            disabled={loading || !editMode}
+            onChange={(e) => {
+              handleChange(e);
+              if (e.target.value === "") {
+                getCarList();
+              }
+            }}
+            disabled={loading || !editMode || isNotSearchPage}
             type="text"
             id="name"
             name="name"
@@ -74,10 +87,13 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             <span className="text-xs">Kategori</span>
           </label>
           <select
-            onChange={handleChange}
+            onChange={(e) => {
+              handleChange(e);
+              getCarList();
+            }}
             id="category"
             name="category"
-            disabled
+            disabled={loading || isNotSearchPage}
             className="select select-bordered w-full text-xs font-normal text-black rounded-sm appearance-none without-ring "
           >
             <option className="text-gray-400" disabled>
@@ -131,10 +147,13 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             <span className="text-xs">Status</span>
           </label>
           <select
-            onChange={handleChange}
+            onChange={(e) => {
+              handleChange(e);
+              getCarList();
+            }}
             id="status"
             name="status"
-            disabled={loading || !editMode}
+            disabled={loading || !editMode || isNotSearchPage}
             className="select select-bordered w-full text-xs font-normal text-black rounded-sm without-ring"
           >
             <option className="text-gray-400" disabled>
@@ -148,14 +167,16 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             </option>
           </select>
         </div>
-        <Button
-          disabled={loading}
-          variant={editMode ? "contained" : "outlined"}
-          color={editMode ? "primary" : "secondary"}
-          type="submit"
-        >
-          {editMode ? "Cari Mobil" : "Edit"}
-        </Button>
+        {!isNotSearchPage && (
+          <Button
+            disabled={loading}
+            variant={editMode ? "contained" : "outlined"}
+            color={editMode ? "primary" : "secondary"}
+            type="submit"
+          >
+            {editMode ? "Cari Mobil" : "Edit"}
+          </Button>
+        )}
       </form>
     </>
   );

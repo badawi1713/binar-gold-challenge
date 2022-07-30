@@ -12,6 +12,19 @@ const createStars = (item) => {
   return stars;
 };
 
+const currencyFormat = (
+  value = 0,
+  currency = "IDR",
+  format = "id-ID",
+  minimumFractionDigits = 0
+) => {
+  return new Intl.NumberFormat(format, {
+    style: "currency",
+    currency,
+    minimumFractionDigits,
+  }).format(value);
+};
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -22,5 +35,5 @@ const ScrollToTop = () => {
   return null;
 };
 
-export { createStars, ScrollToTop };
+export { createStars, ScrollToTop, currencyFormat };
 
