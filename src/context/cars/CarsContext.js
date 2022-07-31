@@ -40,7 +40,7 @@ export const CarsProvider = ({ children }) => {
         });
       } else {
         if (name.trim() === "" && !category) {
-          carList = carList;
+          carList = response?.data || [];
           dispatch({
             type: SET_CARS,
             payload: {
