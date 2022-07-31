@@ -6,7 +6,7 @@ import {
   FiTwitch,
   FiMail,
 } from "react-icons/fi";
-import Logo from "../Logo/Logo";
+import Logo from "../Logo";
 
 const Footer = () => {
   return (

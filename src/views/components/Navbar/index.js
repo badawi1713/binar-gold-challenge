@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
-import Drawer from "../Drawer/Drawer";
-import Logo from "../Logo/Logo";
+import Drawer from "../Drawer";
+import Logo from "../Logo";
 
 const Navbar = () => {
   const url = useLocation();

@@ -1,57 +1,38 @@
 import CarsContext from "context/cars/CarsContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { Button } from "views/components";
 
 const CarSearchModalForm = ({ closeFormFocus }) => {
-  const { loading, editMode, changeCars, carsData, getCarList } =
+  const { loading, editMode, changeCars, getCarList, carSearchFormData } =
     useContext(CarsContext);
 
   const { pathname } = useLocation();
 
   const isNotSearchPage = pathname !== "/cari-mobil" ? true : false;
 
-  const initialFormData = {
-    name: "",
-    category: "",
-    price: "",
-    status: "",
-  };
+  // const initialFormData = {
+  //   name: "",
+  //   category: "",
+  //   price: "",
+  //   status: "",
+  // };
 
-  const [formData, setFormData] = useState(initialFormData);
+  // const [formData, setFormData] = useState(initialFormData);
 
   const handleChange = (e) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target?.id]: e.target?.value,
-    }));
+    changeCars({
+      carSearchFormData: {
+        ...carSearchFormData,
+        [e.target.id]: e.target.value,
+      },
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, category } = formData;
-
-    changeCars({
-      loading: true,
-    });
-
+    getCarList();
     closeFormFocus();
-
-    if (name.trim() === "" && !category) {
-      return getCarList();
-    }
-
-    let newData = carsData?.filter((item) => item.name === name);
-    newData = category
-      ? carsData?.filter((item) => item.category === category)
-      : newData;
-
-    setTimeout(() => {
-      changeCars({
-        loading: false,
-        carsData: newData,
-      });
-    }, 2000);
   };
 
   return (
@@ -67,12 +48,7 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             <span className="text-xs">Nama Mobil</span>
           </label>
           <input
-            onChange={(e) => {
-              handleChange(e);
-              if (e.target.value === "") {
-                getCarList();
-              }
-            }}
+            onChange={handleChange}
             disabled={loading || !editMode || isNotSearchPage}
             type="text"
             id="name"
@@ -87,10 +63,7 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             <span className="text-xs">Kategori</span>
           </label>
           <select
-            onChange={(e) => {
-              handleChange(e);
-              getCarList();
-            }}
+            onChange={handleChange}
             id="category"
             name="category"
             disabled={loading || isNotSearchPage}
@@ -147,10 +120,7 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             <span className="text-xs">Status</span>
           </label>
           <select
-            onChange={(e) => {
-              handleChange(e);
-              getCarList();
-            }}
+            onChange={handleChange}
             id="status"
             name="status"
             disabled={loading || !editMode || isNotSearchPage}

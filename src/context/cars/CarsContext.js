@@ -19,10 +19,16 @@ export const CarsProvider = ({ children }) => {
   };
 
   const getCarList = async (data) => {
+    const { carSearchFormData } = state;
+    const { name, category } = carSearchFormData;
+
     setLoading();
 
     try {
       const response = await ApiGetRequest(`/admin/car`);
+
+      let carList = response?.data || [];
+
       if (response?.error) {
         dispatch({
           type: SET_CARS,
@@ -33,10 +39,23 @@ export const CarsProvider = ({ children }) => {
           },
         });
       } else {
+        if (name.trim() === "" && !category) {
+          carList = carList;
+        } else if (name.trim() !== "" && category !== "") {
+          carList = await carList?.filter((item) => item.name === name);
+          carList = await carList?.filter((item) => item.category === category);
+        } else if (name.trim() !== "") {
+          carList = await carList?.filter((item) => item.name === name);
+        } else if (category !== "") {
+          carList = await carList?.filter((item) => item.category === category);
+        }
+
+        console.log("list", carList);
+
         dispatch({
           type: SET_CARS,
           payload: {
-            carsData: response?.data || [],
+            carsData: carList,
             loading: false,
             isNotFound: response?.data?.items?.length === 0 ? true : false,
             error: false,

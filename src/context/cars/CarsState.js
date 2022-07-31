@@ -6,6 +6,12 @@ export const carsState = {
     category: "",
     price: "",
   },
+  carSearchFormData: {
+    name: "",
+    category: "",
+    price: "",
+    status: "",
+  },
   showResults: false,
   editMode: true,
   loading: false,

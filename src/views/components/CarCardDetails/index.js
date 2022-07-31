@@ -3,7 +3,7 @@ import { currencyFormat } from "helpers/utils";
 import { useContext } from "react";
 import { FiUsers } from "react-icons/fi";
 import { Link, useParams } from "react-router-dom";
-import Button from "../Button/Button";
+import Button from "../Button";
 
 const includesData = [
   "Apa saja yang termasuk dalam paket misal durasi max 12 jam",
