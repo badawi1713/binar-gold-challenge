@@ -115,4 +115,92 @@ const faqData = [
   },
 ];
 
-export { ourServicesData, whyUsData, testimonialsData, faqData };
+const carCategoryOptions = [
+  {
+    label: "Pilih Kapasitas Mobil",
+    value: null,
+    disabled: true,
+  },
+  {
+    label: "Semua",
+    value: "",
+    disabled: false,
+  },
+  {
+    label: "2 - 4 orang",
+    value: "2 - 4 orang",
+    disabled: false,
+  },
+  {
+    label: "4 - 6 orang",
+    value: "4 - 6 orang",
+    disabled: false,
+  },
+  {
+    label: "6 - 8 orang",
+    value: "6 - 8 orang",
+    disabled: false,
+  },
+];
+
+const carPriceOptions = [
+  {
+    label: "Pilih Harga Sewa Per Hari",
+    value: false,
+    disabled: true,
+  },
+  {
+    label: "Semua",
+    value: "",
+    disabled: false,
+  },
+  {
+    label: "< Rp 400.000",
+    value: "< Rp 400.000",
+    disabled: false,
+  },
+  {
+    label: "Rp 400.000 - Rp 600.000",
+    value: "Rp 400.000 - Rp 600.000",
+    disabled: false,
+  },
+  {
+    label: "> Rp 600.000",
+    value: "> Rp 600.000",
+    disabled: false,
+  },
+];
+
+const carStatusOptions = [
+  {
+    label: "Pilih Status Mobil",
+    value: "N/A",
+    disabled: true,
+  },
+  {
+    label: "Semua",
+    value: "",
+    disabled: false,
+  },
+  {
+    label: "Tersedia",
+    value: true,
+    disabled: false,
+  },
+  {
+    label: "Disewakan",
+    value: false,
+    disabled: false,
+  },
+];
+
+export {
+  ourServicesData,
+  whyUsData,
+  testimonialsData,
+  faqData,
+  carCategoryOptions,
+  carPriceOptions,
+  carStatusOptions,
+};
+

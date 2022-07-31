@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import CarSearchModalForm from "./CarSearchModalForm";
 import "./style.css";
 const CarSearchModal = () => {
   const [onFocus, setOnFocus] = useState(false);
+
+  const { pathname } = useLocation();
+
+  const isNotSearchPage = pathname !== "/cari-mobil" ? true : false;
 
   const openFormFocus = () => {
     document.getElementById("search-form-container").style.zIndex = 11;
@@ -23,7 +28,7 @@ const CarSearchModal = () => {
   return (
     <>
       <section
-        onClick={openFormFocus}
+        onClick={() => !isNotSearchPage && openFormFocus()}
         tabIndex={0}
         id="search-form-container"
         className="py-6 px-4 bg-white shadow-md w-full max-w-6xl mx-auto -mt-8 xl:-mt-20 mb-24 relative rounded-lg"

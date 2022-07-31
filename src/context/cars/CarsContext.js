@@ -18,7 +18,7 @@ export const CarsProvider = ({ children }) => {
     });
   };
 
-  const getCarList = async (data) => {
+  const getCarList = async () => {
     const { carSearchFormData } = state;
     const { name, category } = carSearchFormData;
 
@@ -41,16 +41,24 @@ export const CarsProvider = ({ children }) => {
       } else {
         if (name.trim() === "" && !category) {
           carList = carList;
+          dispatch({
+            type: SET_CARS,
+            payload: {
+              showResults: false,
+            },
+          });
         } else if (name.trim() !== "" && category !== "") {
-          carList = await carList?.filter((item) => item.name === name);
+          carList = await carList?.filter(
+            (item) => item.name?.toLowerCase() === name?.toLowerCase()
+          );
           carList = await carList?.filter((item) => item.category === category);
         } else if (name.trim() !== "") {
-          carList = await carList?.filter((item) => item.name === name);
+          carList = await carList?.filter(
+            (item) => item.name?.toLowerCase() === name?.toLowerCase()
+          );
         } else if (category !== "") {
           carList = await carList?.filter((item) => item.category === category);
         }
-
-        console.log("list", carList);
 
         dispatch({
           type: SET_CARS,
@@ -59,7 +67,6 @@ export const CarsProvider = ({ children }) => {
             loading: false,
             isNotFound: response?.data?.items?.length === 0 ? true : false,
             error: false,
-            showResults: true,
           },
         });
       }
@@ -70,7 +77,6 @@ export const CarsProvider = ({ children }) => {
           loading: false,
           isNotFound: false,
           error: true,
-          showResults: false,
         },
       });
     }
@@ -94,7 +100,6 @@ export const CarsProvider = ({ children }) => {
         dispatch({
           type: SET_CARS,
           payload: {
-            showResults: true,
             carsData: response?.data || [],
             loading: false,
             isNotFound: response?.data?.items?.length === 0 ? true : false,
@@ -106,7 +111,6 @@ export const CarsProvider = ({ children }) => {
       dispatch({
         type: SET_CARS,
         payload: {
-          showResults: false,
           loading: false,
           isNotFound: false,
           error: true,

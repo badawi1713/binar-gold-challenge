@@ -1,4 +1,9 @@
 import CarsContext from "context/cars/CarsContext";
+import {
+  carCategoryOptions,
+  carPriceOptions,
+  carStatusOptions
+} from "helpers/data";
 import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { Button } from "views/components";
@@ -10,6 +15,8 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
   const { pathname } = useLocation();
 
   const isNotSearchPage = pathname !== "/cari-mobil" ? true : false;
+
+  const { name, category, status } = carSearchFormData;
 
   // const initialFormData = {
   //   name: "",
@@ -33,6 +40,7 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
     e.preventDefault();
     getCarList();
     closeFormFocus();
+    changeCars({ showResults: true });
   };
 
   return (
@@ -48,6 +56,7 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             <span className="text-xs">Nama Mobil</span>
           </label>
           <input
+            defaultValue={name}
             onChange={handleChange}
             disabled={loading || !editMode || isNotSearchPage}
             type="text"
@@ -63,27 +72,23 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             <span className="text-xs">Kategori</span>
           </label>
           <select
+            defaultValue={category}
             onChange={handleChange}
             id="category"
             name="category"
             disabled={loading || isNotSearchPage}
             className="select select-bordered w-full text-xs font-normal text-black rounded-sm appearance-none without-ring "
           >
-            <option className="text-gray-400" disabled>
-              Pilih Kapasitas Mobil
-            </option>
-            <option className="text-black" value="">
-              Semua
-            </option>
-            <option className="text-black" value="2 - 4 orang">
-              2 - 4 orang
-            </option>
-            <option className="text-black" value="4 - 6 orang">
-              4 - 6 orang
-            </option>
-            <option className="text-black" value="6 - 8 orang">
-              6 - 8 orang
-            </option>
+            {carCategoryOptions?.map((item) => (
+              <option
+                className={item?.disabled ? "text-gray-400" : "text-black"}
+                disabled={item?.disabled}
+                value={item.value}
+                key={item.label}
+              >
+                {item.label}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -98,21 +103,16 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             disabled
             className="select select-bordered w-full text-xs font-normal text-black rounded-sm without-ring"
           >
-            <option className="text-gray-400" disabled>
-              Pilih Harga Sewa Per hari
-            </option>
-            <option className="text-black" value="">
-              Semua
-            </option>
-            <option className="text-black" value="1">
-              &lt; Rp 400.000
-            </option>
-            <option className="text-black" value="2">
-              Rp 400.000 - Rp 600.000{" "}
-            </option>
-            <option className="text-black" value="3">
-              &gt; Rp 600.000
-            </option>
+            {carPriceOptions?.map((item) => (
+              <option
+                className={item?.disabled ? "text-gray-400" : "text-black"}
+                disabled={item?.disabled}
+                value={item.value}
+                key={item.label}
+              >
+                {item.label}
+              </option>
+            ))}
           </select>
         </div>
         <div className="form-control  flex-1">
@@ -120,21 +120,23 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             <span className="text-xs">Status</span>
           </label>
           <select
+            defaultValue={status}
             onChange={handleChange}
             id="status"
             name="status"
-            disabled={loading || !editMode || isNotSearchPage}
+            disabled
             className="select select-bordered w-full text-xs font-normal text-black rounded-sm without-ring"
           >
-            <option className="text-gray-400" disabled>
-              Pilih Status Mobil
-            </option>
-            <option className="text-black" value={true}>
-              Tersedia
-            </option>
-            <option className="text-black" value={false}>
-              Disewa
-            </option>
+            {carStatusOptions?.map((item) => (
+              <option
+                className={item?.disabled ? "text-gray-400" : "text-black"}
+                disabled={item?.disabled}
+                value={item.value}
+                key={item.label}
+              >
+                {item.label}
+              </option>
+            ))}
           </select>
         </div>
         {!isNotSearchPage && (

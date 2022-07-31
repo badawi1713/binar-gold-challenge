@@ -177,9 +177,9 @@ const CarCardDetails = () => {
               {currencyFormat(data?.price || 0)}
             </p>
           </div>
-          {/* <Link to="/cari-mobil">
+          <Link to="/cari-mobil">
             <Button fullWidth color="primary">Kembali ke Pencarian Mobil</Button>
-          </Link> */}
+          </Link>
         </div>
       </div>
     </section>
