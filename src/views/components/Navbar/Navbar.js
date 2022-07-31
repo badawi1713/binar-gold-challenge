@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
@@ -17,6 +17,14 @@ const Navbar = () => {
       await navigate("/");
     }
   };
+
+  useEffect(() => {
+    const closeSidebar = () => {
+      setIsOpen(false);
+    };
+
+    window.addEventListener("resize", closeSidebar);
+  }, []);
 
   return (
     <>
