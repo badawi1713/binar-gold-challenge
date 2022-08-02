@@ -63,7 +63,7 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             id="name"
             name="name"
             placeholder="Ketik nama/tipe mobil"
-            className="input input-bordered w-full text-xs rounded-sm without-ring"
+            className="input input-bordered w-full text-xs rounded-sm without-ring disabled:text-gray-400"
           />
         </div>
 
@@ -77,7 +77,7 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             id="category"
             name="category"
             disabled={loading || isNotSearchPage}
-            className="select select-bordered w-full text-xs font-normal text-black rounded-sm appearance-none without-ring "
+            className="select select-bordered w-full text-xs font-normal text-black rounded-sm appearance-none without-ring disabled:text-gray-400 "
           >
             {carCategoryOptions?.map((item) => (
               <option
@@ -101,7 +101,7 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             id="price"
             name="price"
             disabled
-            className="select select-bordered w-full text-xs font-normal text-black rounded-sm without-ring"
+            className="select select-bordered w-full text-xs font-normal text-black rounded-sm without-ring disabled:text-gray-400"
           >
             {carPriceOptions?.map((item) => (
               <option
@@ -125,7 +125,7 @@ const CarSearchModalForm = ({ closeFormFocus }) => {
             id="status"
             name="status"
             disabled
-            className="select select-bordered w-full text-xs font-normal text-black rounded-sm without-ring"
+            className="select select-bordered w-full text-xs font-normal text-black rounded-sm without-ring disabled:text-gray-400"
           >
             {carStatusOptions?.map((item) => (
               <option
