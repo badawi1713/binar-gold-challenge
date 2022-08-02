@@ -105,7 +105,7 @@ const Navbar = () => {
                 activeClass="text-dark-blue-04 font-semibold"
                 className="cursor-pointer hover:text-dark-blue-04"
                 spy={true}
-                offset={-80}
+                offset={-60}
                 to="our-services"
                 smooth={true}
                 duration={500}

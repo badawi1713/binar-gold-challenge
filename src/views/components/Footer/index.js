@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-4 max-w-xs">
           <Link
-            offset={-40}
+            offset={0}
             smooth={true}
             duration={500}
             to="our-services"
